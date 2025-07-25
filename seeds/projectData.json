@@ -1,0 +1,17 @@
+[
+    {
+        "name": "DnD 2024 Combat Math",
+        "description": "A web app that allows you to calculate your chance to hit and enemies chance to fail saving throws.",
+        "funding_goal": 500
+    },
+    {
+        "name": "Scheduler and Habit Tracker",
+        "description": "A web app that you can use to create daily task lists and track habits.",
+        "funding_goal": 700
+    },
+    {
+        "name": "Macro Tracker and Recipe Repository",
+        "description": "A mobile app that enables macro tracking and saving recipes",
+        "funding_goal": 700
+    }
+]
