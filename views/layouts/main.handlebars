@@ -4,9 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crowd Fund</title>
-    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-
+    <header>
+      <nav>
+        <h1><a href="/">CrowdCraft</a></h1>
+        {{#if logged_in}}
+        <a href="/profile">Profile</a>
+        <button id="logout">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{#if}}
+      </nav>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <p>&copy; {{getYear}} CrowdCraft</p>
+    </footer>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
