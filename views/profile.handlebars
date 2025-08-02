@@ -1,0 +1,65 @@
+<div>
+  <div>
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+{{#if projects.length}}
+  <div>
+    <h3>Current Projects:</h3>
+    <div class="project-list">
+      {{#each projects as |project|}}
+        <div>
+          <div>
+            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+          </div>
+          <div>
+            <button
+              class="btn btn-sm btn-danger"
+              data-id="{{project.id}}"
+            >Delete</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/if}}
+
+<div>
+  <div>
+    <h3>Create A New Project</h3>
+    <form id="new-project-form">
+      <div>
+        <label for="project-name">Project Name:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="project-name"
+          name="project-name"
+        />
+      </div>
+      <div>
+        <label for="project-desc">Description:</label>
+        <textarea
+          class="form-input"
+          id="project-desc"
+          name="project-desc"
+        ></textarea>
+      </div>
+      <div>
+        <label for="project-fund">Funding Goal ($):</label>
+        <input
+          class="form-input"
+          type="number"
+          id="project-fund"
+          name="project-fund"
+        />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Create Project</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="./js/profile.js"></script>
