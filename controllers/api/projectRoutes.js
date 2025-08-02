@@ -41,4 +41,27 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
+router.put("/:id/donate", async (req, res) => {
+  try {
+    const project = await Project.findByPk(req.params.id);
+
+    if (!project) {
+      return res.status(404).json({ message: "Project not found." });
+    }
+
+    const amount = parseFloat(req.body.amount);
+    if (isNaN(amount) || amount <= 0) {
+      return res.status(400).json({ message: "Invalid donation amount." });
+    }
+
+    project.funded_amount = parseFloat(project.funded_amount) + amount;
+
+    await project.save();
+
+    res.status(200).json(project);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

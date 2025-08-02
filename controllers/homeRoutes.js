@@ -43,6 +43,13 @@ router.get("/project/:id", async (req, res) => {
 
     const selectedProject = projectData.get({ plain: true });
 
+    selectedProject.progressPercent = Math.min(
+      Math.round(
+        (selectedProject.funded_amount / selectedProject.funding_goal) * 100
+      ),
+      100
+    );
+
     res.render("project", {
       ...selectedProject,
       logged_in: req.session.logged_in,

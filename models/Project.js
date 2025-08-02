@@ -28,6 +28,11 @@ Project.init(
       type: DataTypes.FLOAT,
       allowNull: false,
     },
+    funded_amount: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+      defaultValue: 0,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
