@@ -7,12 +7,12 @@ const logoutHandler = async () => {
   });
 
   if (response.ok) {
-    document.location.replace("/login");
+    document.location.replace("/");
   } else {
     alert(response.statusText || "Failed to log out. Please try again.");
   }
-
-  if (logoutButton) {
-    logoutButton.addEventListener("click", logoutButton);
-  }
 };
+
+if (logoutButton) {
+  logoutButton.addEventListener("click", logoutHandler);
+}

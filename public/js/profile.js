@@ -9,7 +9,7 @@ const createProjectHandler = async (event) => {
     const response = await fetch("/api/projects", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, desc, funding }),
+      body: JSON.stringify({ name, description: desc, funding_goal: funding }),
     });
 
     if (response.ok) {
@@ -25,18 +25,20 @@ const createProjectHandler = async (event) => {
 
 const deleteProjectHandler = async (event) => {
   const id = event.target.dataset.id;
+  const name = event.target.dataset.name;
 
   if (id) {
-    const response = await fetch(`/api/projects/${id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id }),
-    });
+    if (window.confirm(`Are you sure you want to delete "${name}"?`)) {
+      const response = await fetch(`/api/projects/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
 
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      alert(response.statusText || "Failed to delete project.");
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert(response.statusText || "Failed to delete project.");
+      }
     }
   }
 };
