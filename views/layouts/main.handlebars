@@ -12,15 +12,17 @@
       <header>
         <nav class="container">
           <h1><a href="/">CrowdCraft</a></h1>
-          {{#if logged_in}}
-            <a href="/profile">Profile</a>
-            <button
-              class=".btn btn-sm btn-secondary"
-              id="logout"
-            >Logout</button>
-          {{else}}
-            <a href="/login" class="btn btn-primary btn-sm">Login</a>
-          {{/if}}
+          <div>{{#if logged_in}}
+              <a href="/profile">Profile</a>
+              <button
+                class="btn btn-sm btn-primary"
+                id="logout"
+                aria-label="Log out of your account"
+              >Logout</button>
+            {{else}}
+              <a href="/login" class="btn btn-primary btn-sm">Login</a>
+            {{/if}}
+          </div>
         </nav>
       </header>
       <main class="container mt-4">

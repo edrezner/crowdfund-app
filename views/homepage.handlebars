@@ -5,16 +5,16 @@
         <a href="/project/{{project.id}}">{{project.name}}</a>
       </h2>
       <p class="mb-2">
-        <span for="img" aria-label="money">💲</span>
+        <span role="img" aria-label="money">💲</span>
         <span class="dollar-amount">{{formatAmount project.funding_goal}}</span>
         needed!
       </p>
       <p class="text-muted">Created by
-        {{project.user.name}}
+        <strong>{{project.user.name}}</strong>
         on
         {{formatDate project.date_created}}</p>
     </div>
-    <div class="col-md-7">
+    <div class="mt-3">
       <p>
         {{project.description}}
       </p>

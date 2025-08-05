@@ -1,35 +1,31 @@
-<div>
-  <div>
+<div class="container mt-4">
+  <div class="mb-4">
     <h2>Welcome, {{name}}!</h2>
   </div>
-</div>
 
-{{#if projects.length}}
-  <div>
-    <h3>Current Projects:</h3>
-    <div class="project-list">
-      {{#each projects as |project|}}
-        <div>
-          <div>
-            <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-          </div>
-          <div>
+  {{#if projects.length}}
+    <div class="mb-4">
+      <h3>Current Projects:</h3>
+      <div class="project-list">
+        {{#each projects as |project|}}
+          <div class="card mb-3 project-card">
+            <h4><a href="/project/{{project.id}}">{{project.name}}</a>
+            </h4>
             <button
               class="btn btn-sm btn-danger"
               data-id="{{project.id}}"
               data-name="{{project.name}}"
             >Delete</button>
-          </div>
-        </div>
-      {{/each}}
-    </div>
-  </div>
-{{/if}}
 
-<div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
   <div>
     <h3>Create A New Project</h3>
-    <form id="new-project-form">
+    <form id="new-project-form" class="card">
       <div>
         <label for="project-name">Project Name:</label>
         <input
@@ -56,7 +52,7 @@
           name="project-fund"
         />
       </div>
-      <div>
+      <div class="text-center">
         <button type="submit" class="btn btn-primary">Create Project</button>
       </div>
     </form>
