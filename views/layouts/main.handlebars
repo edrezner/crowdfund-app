@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div>
+    <div class="site-wrapper">
       <header>
         <nav class="container">
           <h1><a href="/">CrowdCraft</a></h1>
@@ -25,8 +25,10 @@
           </div>
         </nav>
       </header>
-      <main class="container mt-4">
-        {{{body}}}
+      <main class="mt-4">
+        <div class="container">
+          {{{body}}}
+        </div>
       </main>
       <footer>
         <p>&copy; {{getYear}} CrowdCraft</p>
