@@ -1,0 +1,84 @@
+/* CSS Variables */
+
+:root {
+  --color-primary-dark: #061a40;
+  --color-primary: #0353a4;
+  --color-primary-light: #b9d6f2;
+  --color-accent: #ffc857;
+  --color-accent-hover: #e0a93d;
+  --color-danger: #d72628;
+  --color-danger-hover: #a61b29;
+  --color-neutral-light: #f7f7f7;
+  --color-neutral-gray: #666;
+  --color-white: #fff;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* Reset Base */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--color-neutral-light);
+  color: var(--color-primary-dark);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-3);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+/* Layout */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
