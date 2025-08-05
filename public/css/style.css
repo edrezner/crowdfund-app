@@ -1,0 +1,69 @@
+/* Homepage Spacing */
+.homepage .card {
+  margin-bottom: var(--space-5);
+}
+
+/* Profile Page Layout */
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Margins */
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-3 {
+  margin-top: var(--space-3);
+}
+
+/* Visual Polish */
+a {
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+
+  .card {
+    padding: var(--space-3);
+  }
+
+  form {
+    padding: var(--space-3);
+  }
+}
+
+/* Login/Signup Side-by-Side */
+@media (min-width: 768px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+}
