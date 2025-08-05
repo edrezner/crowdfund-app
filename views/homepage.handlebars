@@ -1,15 +1,15 @@
 {{#each projects as |project|}}
-  <div class="row mb-4 project">
-    <div class="col-md-5">
+  <div class="card mb-4">
+    <div class="mb-3">
       <h2>
         <a href="/project/{{project.id}}">{{project.name}}</a>
       </h2>
-      <p>
+      <p class="mb-2">
         <span for="img" aria-label="money">💲</span>
         <span class="dollar-amount">{{formatAmount project.funding_goal}}</span>
         needed!
       </p>
-      <p>Created by
+      <p class="text-muted">Created by
         {{project.user.name}}
         on
         {{formatDate project.date_created}}</p>
