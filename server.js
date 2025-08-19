@@ -16,16 +16,19 @@ const hbs = exphbs.create({
   helpers,
 });
 
+const isProd = process.env.NODE_ENV === "production";
+if (isProd) app.set("trust proxy", 1);
+
 const sess = {
-  secret: "Super secret secret",
+  secret: process.env.SESSION_SECRET || "Super secret secret",
   cookie: {
-    maxAge: 300000,
+    maxAge: 1000 * 60 * 60,
     httpOnly: true,
-    secure: false,
-    sameSite: "strict",
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
   },
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize,
   }),
